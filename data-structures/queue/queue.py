@@ -11,14 +11,31 @@ class Q:
         self.rear = x
 
     def dequeue(self):
-        if self.head != None:
-            try:
-                x = self.queue.pop(0)
-		if self.queue[0] != None:
-                    self.head = self.queue[0]
-                else:
-                    self.head = None
-                return x
-	    except:
-                print("there's nothing left in the queue!")
-                return None
+        if self.queue:
+            if len(self.queue)>1:
+	    	self.head = self.queue[1]
+            else:
+                self.head = None
+		self.rear = None
+            return self.queue.pop(0)
+
+if __name__ == "__main__":
+
+    q = Q()
+    print("add element ", 1)
+    q.enqueue(1)
+    print("add element ", 2)
+    q.enqueue(2)
+    print("add element ", 13)
+    q.enqueue(13)
+    print("add element ", 4)
+    q.enqueue(4)
+    print("add element ", 9)
+    q.enqueue(9)
+    print("add element ", 0)
+    q.enqueue(0)
+    print("current queue : ",q.queue)
+    for x in range(6):
+        print(q.dequeue())
+        print("current head : ", q.head)
+        print("current rear : ", q.rear)
