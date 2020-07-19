@@ -17,3 +17,18 @@ def height(node):
 
 h = height(tree)
 print(h)
+
+flat_tree = []
+#assign height to every node:
+def assign_height(node):
+    if not node:
+        return None
+
+    flat_tree.append((node.val, height(node)))
+    assign_height(node.left)
+    assign_height(node.right)
+
+
+assign_height(tree)
+print(flat_tree)
+print(tree.val)    
