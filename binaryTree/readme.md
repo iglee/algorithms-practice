@@ -10,20 +10,20 @@ Top most node is called the root. At most, each node can have 2 children, left o
 ![Basic Structure of A Binary Tree. This diagram also illustrates the difference between height and depth well.](tree_anatomy.png)
 
 ## Height
-**Definition** Height *of a node*: number of edges from the node to the deepest leaf
+**Definition**: Height *of a node*: number of edges from the node to the deepest leaf
 
 
-**Definition** Height *of a tree*: height of the root
+**Definition**: Height *of a tree*: height of the root
 
 ## Depth
-**Definition** Number of edges from the root to the node
+**Definition**: Number of edges from the root to the node
 
 ## Complete vs Full Tree
 - Complete tree: Every level is completely filled except possibly at the last, 
 - Full tree: Every node other than leaves has two children and *all nodes are as far left as possible*
 
 # Traversals
-a process to visit all nodes in the tree.  Tree = nonlinear data structure, nonlinearity sometimes -> no unique solution unless there are specific conditions like initial conditions or boundaries. Therefore, no unique traversals.  Two kinds:
+a process to visit all nodes in the tree.  Tree is a nonlinear data structure; recall, nonlinearity often implies no unique solution unless there are specific conditions like initial conditions or boundaries. Therefore, there are no unique traversals.  There are two kinds of traversals:
 1. depth-first traversal
  - pre-order: parent, left, right
  - in-order: left, parent, right
@@ -31,11 +31,16 @@ a process to visit all nodes in the tree.  Tree = nonlinear data structure, nonl
 2. bredth-first traversal = level order traversal, dequeue nodes at a level and enqueue all children.
 
 ## Example
-- pre-order: 
-- in-order: 
-- post-order: 
+- pre-order: 8, 5, 9, 7, 1, 12, 2, 4, 11, 3
+- in-order: 9, 5, 1, 7, 2, 12, 8, 4, 3, 11
+- post-order: 9, 1, 2, 12, 7, 5, 3, 11, 4, 8
 - bredth-first/level-order: 8, 5, 4, 9, 7, 11, 1, 12, 3, 2
 ![Traversal](traversal.bmp)
+
+Easy way to remember this is *euler tour*. The colored edges represent walls that cannot cross for particular traversal specified.
+![euler traversal](euler-tour.bmp)
+
+To add: recursion steps for traversals
 
 # Binary Search Trees
 coming soon.
